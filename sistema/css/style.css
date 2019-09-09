@@ -8,7 +8,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #41a24c;
+    background: #6699ff;
 }
 
 
@@ -117,11 +117,11 @@ body {
 }
 
 .pen-title span .fa {
-    color: #28bd28;
+    color: #4d88ff;
 }
 
 .pen-title span a {
-    color: #28bd28;
+    color: #4d88ff;
     font-weight: 600;
     text-decoration: none;
 }
@@ -134,7 +134,7 @@ body {
     background: #ffffff;
     max-width: 600px;
     width: 100%;
-    border-top: 5px solid #28bd28;
+    border-top: 5px solid #4d88ff;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
 }
@@ -144,7 +144,7 @@ body {
     position: absolute;
     top: -0;
     right: -0;
-    background: #28bd28;
+    background: #4d88ff;
     width: 30px;
     height: 30px;
     margin: -5px 0 0;
@@ -189,7 +189,7 @@ body {
 
 .formulario h2 {
     margin: 0 0 20px;
-    color: #28bd28;
+    color: #4d88ff;
     font-size: 18px;
     font-weight: 400;
     line-height: 1;
@@ -209,13 +209,13 @@ body {
 }
 
 .formulario input:focus {
-    border: 1px solid #28bd28;
+    border: 1px solid #4d88ff;
     color: #333333;
 }
 
 .formulario button {
     cursor: pointer;
-    background: #28bd28;
+    background: #4d88ff;
     width: 100%;
     border: 0;
     padding: 10px 15px;
@@ -225,7 +225,7 @@ body {
 }
 
 .formulario button:hover {
-    background: #38eb47;
+    background: #99ccff;
 }
 
 .formulario .cta {
@@ -295,7 +295,7 @@ body {
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
     color: #ffffff;
-    background-color: #28bd28;
+    background-color: #4d88ff;
     /*text-shadow: 1px 0px 0px #999, -1px 0px 0px #999,0px 1px 0px #999,0px -1px 0px #999;*/
 }
 
@@ -314,8 +314,8 @@ body {
 
 .navbar-default .navbar-nav>.dropdown>a:hover .caret,
 .navbar-default .navbar-nav>.dropdown>a:focus .caret {
-    border-bottom-color: #28bd28;
-    border-top-color: #28bd28;
+    border-bottom-color: #4d88ff;
+    border-top-color: #4d88ff;
 }
 
 
@@ -390,32 +390,32 @@ table th {
 }
 
 .btn-info.btn-fill {
-    border: #18d918;
+    border: #4d88ff;
 }
 
 .btn-info.btn-fill:hover {
-    border: #38eb47;
+    border: #99ccff;
 }
 
 .nav-pills>li.active>a {
-    background-color: #28bd28;
+    background-color: #4d88ff;
 }
 
 .nav-pills>li.active>a:hover {
-    background-color: #38eb47;
+    background-color: #99ccff;
 }
 
 .btn-info.btn-fill:hover {
-    background: #38eb47;
+    background: #99ccff;
 }
 
 .ti-linux,
 .pull-right a {
-    color: #28bd28;
+    color: #4d88ff;
 }
 
 .navbar-default .navbar-nav>li>a:not(.btn):hover {
-    color: #28bd28;
+    color: #4d88ff;
 }
 
 .imagemLogin {

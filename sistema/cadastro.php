@@ -42,60 +42,86 @@ include_once('superior.php');
 								<div class="col-md-6">
 									<div class="form-group">
 										<label><span id = "cmpObrgt">* </span>Nome</label>
-										<input type="hidden" name="cadastroCliFornCod" id="cadastroCliFornCod">
-										<input type="text" class="form-control border-input" name="cadCliFornName" id="cadCliFornName" placeholder="Nome">
+										<input type="hidden" name="CliName" id="CliName">
+										<input type="text" class="form-control border-input" name="" id="" placeholder="Nome">
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
 										<label>CPF</label>
-										<input type="text" class="form-control border-input" name="cadCliFornCNPJCPF" id="cadCliFornCNPJCPF" placeholder="07.833.690/00001-09" >
+										<input type="text" class="form-control border-input" name="CliCPF" id="CliCPF" placeholder="000.000.000-00" >
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label for="">Tipo</label>
-										<select value="" class="form-control border-input" name="cadCliFornTipo" id="cadCliFornTipo">
+										<label for="">Assessor</label>
+										<select value="" class="form-control border-input" name="CliAssessor" id="CliAssessor">
 											<option value="">Selecione...</option>
-											<option value="PF">Pessoa Física</option>
-											<option value="PJ">Pessoa Jurídica</option>
-										</select>
+											<!-- <option value="PF">Pessoa Física</option>
+												<option value="PJ">Pessoa Jurídica</option> -->
+											</select>
+										</div>
 									</div>
+
 								</div>
 
-							</div>
-
-							<div class="row">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Telefone</label>
-										<input type="text" class="form-control border-input" name="cadCliFornTel" id="cadCliFornTel" placeholder="(11) 0000-0000">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Telefone</label>
+											<input type="text" class="form-control border-input" name="CliTel" id="CliTel" placeholder="(11) 0000-0000">
+										</div>
 									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label>Email</label>
-										<input type="text" class="form-control border-input" name="cadCliFornEmail" id="cadCliFornEmail" placeholder="beardsbucket@beardsweb.com.br" >
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Telefone Celular</label>
+											<input type="text" class="form-control border-input" name="CliCel" id="CliCel" placeholder="(11) 90000-0000" >
+										</div>
 									</div>
-								</div>
-								<div class="col-md-3">
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Beneficio</label>
+											<input type="text" class="form-control border-input" name="CliBN" id="CliBN" placeholder="000.000.000-0" >
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Especie</label>
+											<input type="text" class="form-control border-input" name="CliEspecie" id="CliEspecie" placeholder="41" >
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label><span id = "cmpObrgt">* </span>Nome Mãe</label>
+											<input type="hidden" name="CliNameMae" id="CliNameMae">
+											<input type="text" class="form-control border-input" name="" id="" placeholder="Nome da Mãe">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label><span id = "cmpObrgt">* </span>Nome Pai</label>
+											<input type="hidden" name="CliNamePai" id="CliNamePai">
+											<input type="text" class="form-control border-input" name="" id="" placeholder="Nome do Pai">
+										</div>
+									</div>
+								<!-- <div class="col-md-3">
 									<div class="form-group">
 										<label for=""><span id = "cmpObrgt">* </span>Empresa / Perfil</label>
-										<select value="" class="form-control border-input" id="cmbEmpresaSelecao" name="cmbEmpresaSelecao" >
+										<select value="" class="form-control border-input" id="" name="" >
 										</select>
 									</div>
-								</div>
+								</div> -->
 
-								<div class="col-md-2">
+								<!-- <div class="col-md-2">
 									<div class="form-group">
 										<label for=""><span id = "cmpObrgt">* </span>Status</label>
-										<select value="" class="form-control border-input" name="cadCliFornStatus" id="cadCliFornStatus">
+										<select value="" class="form-control border-input" name="" id="">
 											<option value="">Selecione...</option>
 											<option value="1">Ativo</option>
 											<option value="0">Inativo</option>
 										</select>
 									</div>
-								</div>
+								</div> -->
 
 							</div>
 
@@ -106,10 +132,10 @@ include_once('superior.php');
 										<label for=""><span id = "cmpObrgt">* </span>Tipo da Conta</label>
 										<select value="" class="form-control border-input" name="cadCliFornTipoConta" id="cadCliFornTipoConta" onchange="trocaTipoConta(this.value)">
 											<option value="Selecione">Selecione...</option>
-											<option value="SC">Sem Conta</option>
+											<option value="OP">OP</option>
 											<option value="CC">Corrente</option>
 											<option value="CP">Poupança</option>
-											<option value="CS">Salário</option>
+											<!-- <option value="CS">Salário</option> -->
 										</select>
 									</div>
 								</div>
@@ -141,9 +167,9 @@ include_once('superior.php');
 
 
 						<div class="text-center">
-							<button class="btn btn-info btn-fill btn-wd" name="buttoncadClienteForncedor" id="buttoncadClienteForncedor" value="1" onclick="selecionaAcaoCadClienteForncedor(this.value)">Cadastrar</button>
+							<input type="button" class="btn btn-info btn-fill btn-wd" name="CadCli" id="CadCli" value="Cadastrar">
 
-							<button  class="btn btn-info btn-fill btn-wd danger" value="2" onclick="cancelaCliForn()" name="buttonCancelarCliForn" id="buttonCancelarCliForn">Cancelar</button>
+							<button  class="btn btn-info btn-fill btn-wd danger" value="2"  name="buttonCancelarCliForn" id="buttonCancelarCliForn">Cancelar</button>
 
 						</div>
 
@@ -202,17 +228,17 @@ include_once('superior.php');
 							</table>
 						</div> -->
 
-					<!-- </div> CONTENT TABELA -->
+						<!-- </div> CONTENT TABELA -->
 
 
 
 
-				</div> <!--CARD -->
-			</div> <!-- COL -->
+					</div> <!--CARD -->
+				</div> <!-- COL -->
 
 
 
-		</div> <!-- ROW CLIENTE -->
+			</div> <!-- ROW CLIENTE -->
 
 
 	<!-- 	<div class="row" id="rowCategoria">  <ROW Categoria >
@@ -313,64 +339,82 @@ include_once('superior.php');
 
 								</tbody>
 							</table> -->
-						<!-- </div> CONTENT TABELA -->
-					<!-- </div> CARD CATEGORIA -->
-				<!-- </div> COL -->
+							<!-- </div> CONTENT TABELA -->
+							<!-- </div> CARD CATEGORIA -->
+							<!-- </div> COL -->
 
 
-			<!-- </div> ROW CATEGORIA -->
-
-
-
-		<!-- </div> CONTENT FLUID -->
-	</div>
-
-</div> <!-- CONTENT -->
+							<!-- </div> ROW CATEGORIA -->
 
 
 
+							<!-- </div> CONTENT FLUID -->
+						</div>
 
-
-<?php include_once('inferior.php');?>
-
-
-<script src = "js/interatividades.js"></script>
-<script src = "js/crudAjaxCadastro.js"></script>
-
-<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
-
-<script>
-	var $JQ = jQuery.noConflict();    
-</script>
-
-<script src="js/jquery.maskMoney.min.js"></script>
-<script src="js/jquery.mask.js"></script>
-
-
-
-<script>
-	var options = {
-		onKeyPress: function (cpf, ev, el, op) {
-			var masks = ['000.000.000-00', '0000.000.000-00'],
-			mask = (cpf.length > 14) ? masks[1] : masks[0];
-			el.mask(mask, op);
-		}
-	}
-
-	$JQ('#cadCliFornCNPJCPF').mask('000.000.000-00', options);
-
-
-	var options2 = {
-		onKeyPress: function (cpf, ev, el, op) {
-			var masks = ['(00) 0000-00000', '(00) 00000-0000'],
-			mask = (cpf.length > 14) ? masks[1] : masks[0];
-			el.mask(mask, op);
-		}
-	}
-
-	$JQ('#cadCliFornTel').mask('(00) 0000-00000', options2);
+					</div> <!-- CONTENT -->
 
 
 
 
-</script>
+
+					<?php include_once('inferior.php');?>
+
+
+					<script src = "js/interatividades.js"></script>
+					<script src = "js/crudAjaxCadastro.js"></script>
+
+					<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+
+					<script>
+						var $JQ = jQuery.noConflict();    
+					</script>
+
+					<script src="js/jquery.maskMoney.min.js"></script>
+					<script src="js/jquery.mask.js"></script>
+
+
+
+					<script>
+						var options = {
+							onKeyPress: function (cpf, ev, el, op) {
+								var masks = ['000.000.000-00', '0000.000.000-00'],
+								mask = (cpf.length > 14) ? masks[1] : masks[0];
+								el.mask(mask, op);
+							}
+						}
+
+						$JQ('#CliCPF').mask('000.000.000-00', options);
+
+
+						var options2 = {
+							onKeyPress: function (cpf, ev, el, op) {
+								var masks = ['(00) 0000-00000', '(00) 00000-0000'],
+								mask = (cpf.length > 14) ? masks[1] : masks[0];
+								el.mask(mask, op);
+							}
+						}
+
+						$JQ('#CliTel').mask('(00) 0000-00000', options2);
+
+						var options2 = {
+							onKeyPress: function (cpf, ev, el, op) {
+								var masks = ['(00) 0000-00000', '(00) 00000-0000'],
+								mask = (cpf.length > 14) ? masks[1] : masks[0];
+								el.mask(mask, op);
+							}
+						}
+
+						$JQ('#CliCel').mask('(00) 00000-0000', options2);
+
+						var options = {
+							onKeyPress: function (cpf, ev, el, op) {
+								var masks = ['000.000.000-0', '0000.000.000-0'],
+								mask = (cpf.length > 14) ? masks[1] : masks[0];
+								el.mask(mask, op);
+							}
+						}
+
+						$JQ('#CliBN').mask('000.000.000-0', options);
+
+
+					</script>

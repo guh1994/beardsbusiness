@@ -24,7 +24,7 @@ $url = basename($_SERVER['PHP_SELF']);
 
     <meta name="theme-color" content="#41a24c">
 
-    <title>Beards Bucket</title>
+    <title>Beards Business</title>
     
     <!--Temos que trocar o nome do css do login por que esta o nome de style.css-->
 
@@ -72,8 +72,8 @@ $url = basename($_SERVER['PHP_SELF']);
 
  <div class="sidebar-wrapper">
     <div class="logo">
-        <a href="http://www.beardsweb.com.br" class="simple-text" target="_blank">
-            Beards Web
+        <a href="#" class="simple-text" >
+            Beards Business
         </a>
     </div>
 
