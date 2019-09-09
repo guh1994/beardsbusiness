@@ -42,19 +42,18 @@ include_once('superior.php');
 								<div class="col-md-6">
 									<div class="form-group">
 										<label><span id = "cmpObrgt">* </span>Nome</label>
-										<input type="hidden" name="CliName" id="CliName">
 										<input type="text" class="form-control border-input" name="" id="" placeholder="Nome">
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label>CPF</label>
+										<label><span id = "cmpObrgt">* </span>CPF</label>
 										<input type="text" class="form-control border-input" name="CliCPF" id="CliCPF" placeholder="000.000.000-00" >
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label for="">Assessor</label>
+										<label for=""><span id = "cmpObrgt">* </span>Assessor</label>
 										<select value="" class="form-control border-input" name="CliAssessor" id="CliAssessor">
 											<option value="">Selecione...</option>
 											<!-- <option value="PF">Pessoa Física</option>
@@ -62,9 +61,7 @@ include_once('superior.php');
 											</select>
 										</div>
 									</div>
-
 								</div>
-
 								<div class="row">
 									<div class="col-md-3">
 										<div class="form-group">
@@ -80,7 +77,7 @@ include_once('superior.php');
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<label>Beneficio</label>
+											<label><span id = "cmpObrgt">* </span>Beneficio</label>
 											<input type="text" class="form-control border-input" name="CliBN" id="CliBN" placeholder="000.000.000-0" >
 										</div>
 									</div>
@@ -90,20 +87,42 @@ include_once('superior.php');
 											<input type="text" class="form-control border-input" name="CliEspecie" id="CliEspecie" placeholder="41" >
 										</div>
 									</div>
+								</div>
+
+								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
 											<label><span id = "cmpObrgt">* </span>Nome Mãe</label>
-											<input type="hidden" name="CliNameMae" id="CliNameMae">
-											<input type="text" class="form-control border-input" name="" id="" placeholder="Nome da Mãe">
+											<input type="text" class="form-control border-input" name="CliNameMae" id="CliNameMae" placeholder="Nome da Mãe">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label><span id = "cmpObrgt">* </span>Nome Pai</label>
-											<input type="hidden" name="CliNamePai" id="CliNamePai">
-											<input type="text" class="form-control border-input" name="" id="" placeholder="Nome do Pai">
+											<input type="text" class="form-control border-input" name="" id="" placeholder="">
 										</div>
 									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-2">
+										<div class="form-group">
+											<label><span id = "cmpObrgt">* </span>CEP</label>
+											<input type="text" class="form-control border-input" name="CLICEP" id="CLICEP" placeholder="">
+										</div>
+									</div>
+									<div class="col-md-7">
+										<div class="form-group">
+											<label><span id = "cmpObrgt">* </span>Logradouro</label>
+											<input type="text" class="form-control border-input" name="" id="" placeholder="">
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label><span id = "cmpObrgt">* </span>Numero</label>
+											<input type="text" class="form-control border-input" name="" id="" placeholder="">
+										</div>
+									</div>
+								</div>
 								<!-- <div class="col-md-3">
 									<div class="form-group">
 										<label for=""><span id = "cmpObrgt">* </span>Empresa / Perfil</label>
@@ -122,71 +141,63 @@ include_once('superior.php');
 										</select>
 									</div>
 								</div> -->
+								<div class="row">
+									<div class="col-md-3">
+										<div class="form-group">
+											<label for=""><span id = "cmpObrgt">* </span>Tipo da Conta</label>
+											<select value="" class="form-control border-input" name="cadCliFornTipoConta" id="cadCliFornTipoConta" onchange="trocaTipoConta(this.value)">
+												<option value="Selecione">Selecione...</option>
+												<option value="OP">OP</option>
+												<option value="CC">Corrente</option>
+												<option value="CP">Poupança</option>
+												<!-- <option value="CS">Salário</option> -->
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Banco</label>
+											<input type="text" class="form-control border-input" placeholder="Itaú" name="cadCliFornBanco" id="cadCliFornBanco" disabled>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Agência</label>
+											<input type="text" class="form-control border-input" placeholder="5607" name="cadCliFornAg" id="cadCliFornAg" disabled>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Conta</label>
+											<input type="text" class="form-control border-input" placeholder="00657-3" name="cadCliFornConta" id="cadCliFornConta" disabled>
+										</div>
+									</div>
+								</div>
+							</form>
+
+
+							<div class="text-center">
+								<input type="button" class="btn btn-info btn-fill btn-wd" name="CadCli" id="CadCli" value="Cadastrar">
+
+								<button  class="btn btn-info btn-fill btn-wd danger" value="2"  name="buttonCancelarCliForn" id="buttonCancelarCliForn">Cancelar</button>
 
 							</div>
 
 							<div class="row">
-								
-								<div class="col-md-3">
+
+								<div class="col-md-12">
 									<div class="form-group">
-										<label for=""><span id = "cmpObrgt">* </span>Tipo da Conta</label>
-										<select value="" class="form-control border-input" name="cadCliFornTipoConta" id="cadCliFornTipoConta" onchange="trocaTipoConta(this.value)">
-											<option value="Selecione">Selecione...</option>
-											<option value="OP">OP</option>
-											<option value="CC">Corrente</option>
-											<option value="CP">Poupança</option>
-											<!-- <option value="CS">Salário</option> -->
-										</select>
+										<output type="text" class="text-center" name="retornoFormCliForn" id="retornoFormCliForn"></output>
 									</div>
-								</div>
-
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Banco</label>
-										<input type="text" class="form-control border-input" placeholder="Itaú" name="cadCliFornBanco" id="cadCliFornBanco" disabled>
-									</div>
-								</div>
-
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Agência</label>
-										<input type="text" class="form-control border-input" placeholder="5607" name="cadCliFornAg" id="cadCliFornAg" disabled>
-									</div>
-								</div>
-
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Conta</label>
-										<input type="text" class="form-control border-input" placeholder="00657-3" name="cadCliFornConta" id="cadCliFornConta" disabled>
-									</div>
-								</div>
-								
-
-							</div>
-						</form>
-
-
-						<div class="text-center">
-							<input type="button" class="btn btn-info btn-fill btn-wd" name="CadCli" id="CadCli" value="Cadastrar">
-
-							<button  class="btn btn-info btn-fill btn-wd danger" value="2"  name="buttonCancelarCliForn" id="buttonCancelarCliForn">Cancelar</button>
-
-						</div>
-
-						<div class="row">
-
-							<div class="col-md-12">
-								<div class="form-group">
-									<output type="text" class="text-center" name="retornoFormCliForn" id="retornoFormCliForn"></output>
 								</div>
 							</div>
-
-						</div>
-
-					</div> <!--CONTENT CADASTRO -->
+						</div> <!--CONTENT CADASTRO -->
 
 
-					<!-- <div class="content"> CONTENT TABELA  -->
+						<!-- <div class="content"> CONTENT TABELA  -->
 
 						<!-- <div class="col-md-6 col-md-offset-3 text-center" style="margin-bottom: 15px;">
 							<div class="form-group">
@@ -416,5 +427,13 @@ include_once('superior.php');
 
 						$JQ('#CliBN').mask('000.000.000-0', options);
 
+						var options = {
+							onKeyPress: function (cpf, ev, el, op) {
+								var masks = ['00000-000', '00000-000'],
+								mask = (cpf.length > 14) ? masks[1] : masks[0];
+								el.mask(mask, op);
+							}
+						}
 
+						$JQ('#CLICEP').mask('00000-000', options);
 					</script>
