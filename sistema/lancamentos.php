@@ -1,9 +1,9 @@
 <?php
-session_start();
+// session_start();
 include_once('superior.php');
-require 'src/conecta.php';
+// require 'src/conecta.php';
 
-$cod =  $_SESSION['user']['id'];
+// $cod =  $_SESSION['user']['id'];
 ?>
 
 <div class="content">

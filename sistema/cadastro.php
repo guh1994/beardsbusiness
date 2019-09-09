@@ -1,9 +1,9 @@
 <?php 
-session_start();
+// session_start();
 include_once('superior.php');
-require 'src/conecta.php';
+// require 'src/conecta.php';
 
-$cod =  $_SESSION['user']['id'];
+// $cod =  $_SESSION['user']['id'];
 ?>
 
 
@@ -14,12 +14,12 @@ $cod =  $_SESSION['user']['id'];
 
 		<ul class="nav nav-pills NavegadorSuperior">
 			<li class="active" id = "lancamento" onclick="fnMenuFinancas(this)">
-				<a href="#"><span class="ti-server"></span> Cliente / Fornecedor</a>
+				<a href="#"><span class="ti-server"></span> Cliente</a>
 			</li>
 			
-			<li class="" id="categ" onclick="fnMenuFinancas(this)">
+			<!-- <li class="" id="categ" onclick="fnMenuFinancas(this)">
 				<a href="#"><span class="ti-bookmark"></span> Categoria</a>
-			</li>
+			</li> -->
 
 		</ul>
 
@@ -30,7 +30,7 @@ $cod =  $_SESSION['user']['id'];
 
 				<div class="card">
 					<div class="header">
-						<h4 class="title">Cliente / Fornecedor</h4>
+						<h4 class="title">Cliente</h4>
 					</div>
 
 					<div class="content">
@@ -48,7 +48,7 @@ $cod =  $_SESSION['user']['id'];
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label>CNPJ / CPF</label>
+										<label>CPF</label>
 										<input type="text" class="form-control border-input" name="cadCliFornCNPJCPF" id="cadCliFornCNPJCPF" placeholder="07.833.690/00001-09" >
 									</div>
 								</div>
@@ -160,9 +160,9 @@ $cod =  $_SESSION['user']['id'];
 					</div> <!--CONTENT CADASTRO -->
 
 
-					<div class="content"> <!--CONTENT TABELA -->
+					<!-- <div class="content"> CONTENT TABELA  -->
 
-						<div class="col-md-6 col-md-offset-3 text-center" style="margin-bottom: 15px;">
+						<!-- <div class="col-md-6 col-md-offset-3 text-center" style="margin-bottom: 15px;">
 							<div class="form-group">
 								<label for="">Empresa / Perfil</label>
 								<select value="" class="form-control border-input" name="cmbEmpresaFiltro" id="cmbEmpresaFiltro" onchange="buscaClienteForn(this.value)">
@@ -200,9 +200,9 @@ $cod =  $_SESSION['user']['id'];
 
 								</tbody>
 							</table>
-						</div>
+						</div> -->
 
-					</div> <!-- CONTENT TABELA -->
+					<!-- </div> CONTENT TABELA -->
 
 
 
@@ -215,7 +215,7 @@ $cod =  $_SESSION['user']['id'];
 		</div> <!-- ROW CLIENTE -->
 
 
-		<div class="row" id="rowCategoria"> <!-- ROW Categoria -->
+	<!-- 	<div class="row" id="rowCategoria">  <ROW Categoria >
 
 			<div class="col-lg-12 col-md-12">
 
@@ -287,11 +287,11 @@ $cod =  $_SESSION['user']['id'];
 
 						</div>
 
-					</div> <!--CONTENT CATEGORIA -->
+					</div> CONTENT CATEGORIA -- -->
 
 
-					<div class="content"> <!--CONTENT TABELA -->
-						<div class="table-responsive">
+					<!-- <div class="content"> CONTENT TABELA  -->
+						<!-- <div class="table-responsive">
 
 							<table class="table table-bordered table-striped text-center " width="100%" id="tableCategoria" cellspacing="0" name="tableCategoria">
 								<thead>
@@ -312,17 +312,17 @@ $cod =  $_SESSION['user']['id'];
 									</tr>
 
 								</tbody>
-							</table>
-						</div> <!-- CONTENT TABELA -->
-					</div> <!--CARD CATEGORIA-->
-				</div> <!-- COL -->
+							</table> -->
+						<!-- </div> CONTENT TABELA -->
+					<!-- </div> CARD CATEGORIA -->
+				<!-- </div> COL -->
 
 
-			</div> <!-- ROW CATEGORIA -->
+			<!-- </div> ROW CATEGORIA -->
 
 
 
-		</div> <!-- CONTENT FLUID -->
+		<!-- </div> CONTENT FLUID -->
 	</div>
 
 </div> <!-- CONTENT -->
@@ -351,13 +351,13 @@ $cod =  $_SESSION['user']['id'];
 <script>
 	var options = {
 		onKeyPress: function (cpf, ev, el, op) {
-			var masks = ['000.000.000-000', '00.000.000/0000-00'],
+			var masks = ['000.000.000-00', '0000.000.000-00'],
 			mask = (cpf.length > 14) ? masks[1] : masks[0];
 			el.mask(mask, op);
 		}
 	}
 
-	$JQ('#cadCliFornCNPJCPF').mask('000.000.000-000', options);
+	$JQ('#cadCliFornCNPJCPF').mask('000.000.000-00', options);
 
 
 	var options2 = {

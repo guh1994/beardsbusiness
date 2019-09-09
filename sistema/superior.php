@@ -85,12 +85,12 @@ $url = basename($_SERVER['PHP_SELF']);
             </a>
         </li>
 
-        <li <?php if($url == 'lancamentos.php'){ echo "class = 'active'" ;}?>>
+       <!--  <li <?php if($url == 'lancamentos.php'){ echo "class = 'active'" ;}?>>
             <a href="lancamentos.php">
                 <i class="ti-server"></i>
                 <p>Lançamentos</p>
             </a>
-        </li>
+        </li> -->
 
 
         <li <?php if($url == 'cadastro.php'){ echo "class = 'active'" ;}?>>
@@ -203,27 +203,11 @@ $url = basename($_SERVER['PHP_SELF']);
                 </a>
             </li> -->
 
-            <?php
-
-            $nome = $_SESSION['user']['name'] ;
-
-            $parte = explode(" ", $nome);
-
-
-            if (count($parte)>1){
-                $nomeNovo = $parte[0] . " " . $parte[count($parte)-1];
-            }
-
-            else{
-                $nomeNovo = $nome;
-            }
-
-            ?>
-
+          
             <li>
                 <a href="usuario.php">
                     <i class="fa ti-user"></i>
-                    <p>Usuário: <?php echo $nomeNovo ?></p>
+                    <p>Usuário: Teste</p>
                 </a>
             </li>
 

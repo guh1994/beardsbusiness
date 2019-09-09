@@ -1,5 +1,5 @@
-<?php 
-session_start();
+<?php
+// session_start();
 include_once('superior.php');
 // require "src/conecta.php";
 
@@ -33,33 +33,6 @@ include_once('superior.php');
             <h4 class="title">Detalhes mensais por Empresa</h4>
         </div>
 
-
-        <select class="form-control border-input" id="cmbEmpresaSelecao" name="cmbEmpresaSelecao" onchange="buscaDespesa(this.value);atualizaGrafico(this.value);atualizaDespesa(this.value); atualizaReceita(this.value);">
-            <label for=""><span id = "cmpObrgt">* </span>Empresa</label>
-            <option value="">Selecione...</option>
-
-            <!-- ///////////////////////////////////////////////////// CARREGA EMPRESAS //////////////////////////////////////////////////////// -->
-            <?php 
-            $cSql = "SELECT DISTINCT EMP_COD, EMP_NOME_EMPRESA, EMP_CNPJ FROM USUARIO INNER JOIN USR_EMPR ON USUARIO.USR_COD = USR_EMPR.COD_USR INNER JOIN EMPRESA ON EMPRESA.EMP_COD = USR_EMPR.COD_EMPR WHERE COD_USR = $cod order by (EMP_NOME_EMPRESA) asc";
-
-
-            $result = mysqli_query($conecta, $cSql);
-            while($row = mysqli_fetch_assoc($result)){
-
-                ?>
-                <!-- ////////////////////////////////// METADE DO WHILE ////////////////////////////////////////////// -->
-
-                <option value="<?php echo $row['EMP_COD'];?>"><?php echo $row['EMP_NOME_EMPRESA'];?></option>
-
-                <!-- ////////////////////////////////////////////CONTINUANDO WHILE ////////////////////////////////////////////////-->      
-                <?php
-            }
-
-            ?>
-            <!-- ////////////////////////////////////////////FIM DO CARREGA EMPRESA ////////////////////////////////////////////////-->      
-
-        </select>
-        
     </div>
 </div>
 
@@ -79,7 +52,7 @@ include_once('superior.php');
                             <div class="col-xs-7">
 
                                 <div class="numbers" id="receita">
-                                    <p >Receita</p>
+                                    <p >Vendas</p>
                                     
                                     <p class='valores' id='vlrReceita' name='vlrReceita'></p>
 
@@ -90,7 +63,7 @@ include_once('superior.php');
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="ti-reload"></i>A receber no mês de <?php echo $cMes;?> (S/ Juros)
+                            <i class="ti-reload"></i>Vendidos no mês
                         </div>
                     </div>
                 </div>
@@ -107,7 +80,7 @@ include_once('superior.php');
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers" id="despesa">
-                                <p>Despesas</p>
+                                <p>Andamento</p>
 
                                 <p class='valores' id='vlrDespesa' name='vlrDespesa'></p>
                             </div>
@@ -116,7 +89,7 @@ include_once('superior.php');
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="ti-calendar"></i>A pagar no mês de <?php echo $cMes;?> (S/ Juros)
+                            <i class="ti-calendar"></i>Contratos em andamento
                         </div>
                     </div>
                 </div>
@@ -133,7 +106,7 @@ include_once('superior.php');
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers">
-                                <p>Caixa</p>
+                                <p>Pagos</p>
                                 <p class='valores' id='caixa' name='caixa'></p>
                             </div>
                         </div>
@@ -141,7 +114,7 @@ include_once('superior.php');
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="ti-timer"></i> Saldo Inicial e Movimentações (C/ Juros)
+                            <i class="ti-timer"></i> Contratos Pagos
                         </div>
                     </div>
                 </div>
@@ -149,7 +122,7 @@ include_once('superior.php');
         </div>
     </div> <!-- ROW DASHCAIXAS -->
 
-    <div class="row">
+    <!-- <div class="row">
 
         <div class="content">
 
@@ -160,7 +133,7 @@ include_once('superior.php');
                 </div>
             </div>
         </div>
-    </div> <!--ROW GRÁFICO-->
+    </div> --> <!--ROW GRÁFICO-->
 
     <div class="row"> <!-- DESPESAS -->
 
@@ -169,7 +142,7 @@ include_once('superior.php');
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Despesas</h4>
+                        <h4 class="title">Vendas</h4>
                     </div>
                     <div class="content">
                        <div class="table-responsive">
@@ -178,21 +151,21 @@ include_once('superior.php');
                                 <tr>
                                     <th hidden>Código</th>
                                     <th>Empresa</th>
-                                    <th>Descrição</th>
-                                    <th>Categoria</th>
-                                    <th>Valor Título</th>
-                                    <th>Data Vencimento</th>
-                                    <th>Juros ao Dia</th>
-                                    <th>Valor Atual</th>
-                                    <th>Ação</th>
+                                    <th>Assessor</th>
+                                    <th>Tipo Operação</th>
+                                    <th>Valor</th>
+                                    <th>Data Venda</th>
+                                    <th>Status</th>
+                                    <th>Atualizado Por</th>
+                                    <th>Data e Hora da atualização</th>
 
                                 </tr>
                             </thead>
 
-                            <tbody id="corpoDespesa">
+                            <!-- <tbody id="corpoDespesa">
 
 
-                            </tbody>
+                            </tbody> -->
                         </table>
                     </div>
                 </div>
@@ -201,14 +174,14 @@ include_once('superior.php');
     </div>
 </div> <!--ROW DESPESAS -->
 
-<div class="row">
+<!-- <div class="row">
 
     <div class="content">
 
         <div class="col-md-12">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Receitas</h4>
+                    <h4 class="title">Andamento</h4>
                 </div>
                 <div class="content">
                    <div class="table-responsive">
@@ -216,14 +189,14 @@ include_once('superior.php');
                         <thead>
                             <tr>
                               <th hidden>Código</th>
-                              <th>Empresa</th>
-                              <th>Descrição</th>
-                              <th>Categoria</th>
-                              <th>Valor Título</th>
-                              <th>Data Vencimento</th>
-                              <th>Juros ao Dia</th>
-                              <th>Valor Atual</th>
-                              <th>Ação</th>
+                                    <th>Empresa</th>
+                                    <th>Assessor</th>
+                                    <th>Tipo Operação</th>
+                                    <th>Valor</th>
+                                    <th>Data Venda</th>
+                                    <th>Status</th>
+                                    <th>Atualizado Por</th>
+                                    <th>Data e Hora da atualização</th>
 
                           </tr>
                       </thead>
@@ -238,7 +211,7 @@ include_once('superior.php');
       </div>
   </div>
 </div>
-</div> <!--ROW DESPESAS -->
+</div> ROW DESPESAS -->
 
 
 </div> <!-- CONTENT -->
