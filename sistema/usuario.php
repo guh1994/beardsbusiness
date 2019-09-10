@@ -1,34 +1,34 @@
 <?php
-session_start();
+// session_start();
 include_once('superior.php');
-require 'src/conecta.php';
+// require 'src/conecta.php';
 
-$cAlterar="";
-$cod =  $_SESSION['user']['id'];
-
-
-$cSql = "SELECT USR_COD, USR_SENHA, USR_LOGIN, USR_NOME, USR_EMAIL, IF(USR_STATUS = 1, REPLACE(1, USR_STATUS, 'Ativo'), REPLACE(0, USR_STATUS, 'INATIVO')) AS  USR_STATUS,
-IF(USR_PERMISSAO = 0, REPLACE(0, USR_PERMISSAO, 'Usuário'), REPLACE(USR_PERMISSAO, 1, 'Administrador')) as USR_PERMISSAO FROM USUARIO where USR_COD =".$cod;
+// $cAlterar="";
+// $cod =  $_SESSION['user']['id'];
 
 
-$dataSet = mysqli_query($conecta, $cSql);
+// $cSql = "SELECT USR_COD, USR_SENHA, USR_LOGIN, USR_NOME, USR_EMAIL, IF(USR_STATUS = 1, REPLACE(1, USR_STATUS, 'Ativo'), REPLACE(0, USR_STATUS, 'INATIVO')) AS  USR_STATUS,
+// IF(USR_PERMISSAO = 0, REPLACE(0, USR_PERMISSAO, 'Usuário'), REPLACE(USR_PERMISSAO, 1, 'Administrador')) as USR_PERMISSAO FROM USUARIO where USR_COD =".$cod;
 
-if($oDados = mysqli_fetch_assoc($dataSet)){
-    $SENHA =  $oDados['USR_SENHA'];
-    $PERMISSAO =  $oDados['USR_PERMISSAO'];
-    $NOME =  $oDados['USR_NOME'];
-    $LOGIN =  $oDados['USR_LOGIN'];
-    $EMAIL =  $oDados['USR_EMAIL'];
-    $STATUS = $oDados['USR_STATUS'];
-    $cAlterar='onclick="document.all.foto.click()';
-}
+
+// $dataSet = mysqli_query($conecta, $cSql);
+
+// if($oDados = mysqli_fetch_assoc($dataSet)){
+//     $SENHA =  $oDados['USR_SENHA'];
+//     $PERMISSAO =  $oDados['USR_PERMISSAO'];
+//     $NOME =  $oDados['USR_NOME'];
+//     $LOGIN =  $oDados['USR_LOGIN'];
+//     $EMAIL =  $oDados['USR_EMAIL'];
+//     $STATUS = $oDados['USR_STATUS'];
+//     $cAlterar='onclick="document.all.foto.click()';
+// }
 
 ?>
 
 <style>
-.olho {
-    padding-right: 3px;
-}
+    .olho {
+        padding-right: 3px;
+    }
 
 </style>
 
@@ -43,48 +43,6 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
                     <div class="image">
 
                         <div class="trofeu" rel="" title="Nível do Usuário!">
-
-                            <?php
-                            $cSQL ="SELECT USR_PONTUACAO FROM USUARIO WHERE USR_COD =".$cod;
-                            $dataSet = mysqli_query($conecta, $cSQL);
-                            if($oDados = mysqli_fetch_assoc($dataSet)){
-                                $pontuacao = $oDados['USR_PONTUACAO'];
-                            }
-
-                            if($pontuacao <= 100){
-                                echo '<img src="img/1.png" >';
-                            }
-                            else if($pontuacao <= 200){
-                                echo '<img src="img/2.png" >';
-                            }
-                            else if($pontuacao <= 300){
-                                echo '<img src="img/3.png" >';
-                            }
-                            else if($pontuacao <= 400){
-                                echo '<img src="img/4.png" >';
-                            }
-                            else if($pontuacao <= 500){
-                                echo '<img src="img/5.png" >';
-                            }
-                            else if($pontuacao <= 600){
-                                echo '<img src="img/6.png" >';
-                            }
-                            else if($pontuacao <= 700){
-                                echo '<img src="img/7.png" >';
-                            }
-                            else if($pontuacao <= 800){
-                                echo '<img src="img/8.png" >';
-                            }    
-                            else if($pontuacao <= 900){
-                                echo '<img src="img/9.png" >';
-                            }  
-                            else if($pontuacao >= 900){
-                                echo '<img src="img/10.png" >';
-                            }
-
-                            mysqli_close($conecta);
-
-                            ?>
 
                         </div>
                         <!-- <img src="assets/img/background.jpg" alt="..."/> -->
@@ -103,18 +61,12 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
 
 
 
-                            <?php
-
-                            
-                            echo  '<div class="camera1  border-white" ' .$cAlterar. '"> <img src="img/users/' . $cod . '"  class=" avatar border-white" id = "usrImg" onerror=\'this.src="img/users/erro.png"\') ></div><br>'
-                            ?>
+                           <div class="camera1  border-white"> <img src="img/users/beards2.png" class="avatar border-white" id ="usrImg" ></div><br>
 
                             <h4 class="title" id="nomePagina">
-                                <?php echo $NOME?>
-                            </h4>
+                                                            </h4>
                         </div>
                         <p class="description text-center" id="permissaoPagina">
-                            <?php echo $PERMISSAO;?>
                         </p>
                     </div>
 
@@ -135,19 +87,19 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nome</label>
-                                        <input type="text" class="form-control border-input" value="<?php echo $NOME?>" name="txtNomeUsr">
+                                        <input type="text" class="form-control border-input" value="" name="txtNomeUsr">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Login</label>
-                                        <input type="text" class="form-control border-input" value="<?php echo $LOGIN?>" name="txtLoginUsr">
+                                        <input type="text" class="form-control border-input" value="" name="txtLoginUsr">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Senha</label>
-                                        <input type="password" class="form-control border-input" value="<?php echo $SENHA?>" name="txtSenhaUsr" id="senha">
+                                        <input type="password" class="form-control border-input" value="" name="txtSenhaUsr" id="senha">
                                         <img src="img/olho1.png" id="olho" class="olho">
                                     </div>
                                 </div>
@@ -157,21 +109,21 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="text" class="form-control border-input" value="<?php echo $EMAIL?>" name="txtEmailUsr">
+                                        <input type="text" class="form-control border-input" value="" name="txtEmailUsr">
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Permissão</label>
-                                        <input type="text" class="form-control border-input" readonly value="<?php echo $PERMISSAO?>" name="txtPermissaoUsr">
+                                        <input type="text" class="form-control border-input" readonly value="" name="txtPermissaoUsr">
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Status</label>
-                                        <input type="text" class="form-control border-input" readonly value="<?php echo $STATUS?>" name="txtStatusUsr">
+                                        <input type="text" class="form-control border-input" readonly value="" name="txtStatusUsr">
                                     </div>
                                 </div>
                             </div>
@@ -204,11 +156,7 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
             <!-- Fim ROW Conjunto perfil -->
         </div>
 
-        <?php
 
-        if ($PERMISSAO == 'Administrador'){
-
-            ?>
 
             <div class="row" id="rowEmpresa">
                 <!-- ROW EMPRESA -->
@@ -283,38 +231,6 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
 
                                     <tbody>
 
-                                        <?php
-
-                                        require 'src/conecta.php';
-
-
-                                        $cSql = "SELECT EMP_COD, EMP_NOME_EMPRESA, EMP_CNPJ,
-                                        IF(EMP_STATUS = 1,REPLACE( EMP_STATUS,1,'Ativo'),REPLACE( EMP_STATUS,0,'Inativo')) as EMP_STATUS 
-                                        FROM USUARIO JOIN USR_EMPR ON USR_COD = COD_USR INNER JOIN EMPRESA ON EMP_COD = COD_EMPR WHERE COD_USR = ".$cod;
-
-
-                                        $dataSet = mysqli_query($conecta, $cSql);
-
-                                        while($oDados = mysqli_fetch_assoc($dataSet)){
-                                            echo "
-
-                                            <tr>
-                                            <td name = 'emp".$oDados['EMP_COD']."'>".$oDados['EMP_COD']."</td>
-                                            <td name = 'emp".$oDados['EMP_COD']."'>".$oDados['EMP_NOME_EMPRESA']."</td>
-                                            <td name = 'emp".$oDados['EMP_COD']."'>".$oDados['EMP_CNPJ']."</td>
-                                            <td name = 'emp".$oDados['EMP_COD']."'>".$oDados['EMP_STATUS']."</td>
-
-                                            <td><button class = 'btn' id = '".$oDados['EMP_COD']."' onclick = 'selecionaEmpresa(this.id)' >Alterar</button></td>
-                                            </tr>
-                                            ";
-
-                                        }
-
-                                        mysqli_free_result($dataSet);
-                                        mysqli_close($conecta);  
-
-
-                                        ?>
 
                                     </tbody>
                                 </table>
@@ -461,41 +377,6 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
                                     </thead>
 
                                     <tbody>
-
-                                        <?php
-                                        require 'src/conecta.php';
-
-
-                                        $cSql = "SELECT CNT_COD, CNT_NOME, CNT_BANCO, CNT_AGNC, CNT_NMCONTA, CNT_TIPO, CNT_TIPO, CNT_SALDOINICIAL, EMP_NOME_EMPRESA, IF(CNT_STATUS = 1,REPLACE( CNT_STATUS,1,'Ativo'),REPLACE( CNT_STATUS,0,'Inativo')) as CNT_STATUS  FROM CONTA INNER JOIN
-                                        EMPRESA ON EMPRESA.EMP_COD = CONTA.COD_EMPR INNER JOIN USR_EMPR ON USR_EMPR.COD_EMPR = EMPRESA.EMP_COD WHERE COD_USR = ".$cod." order by CNT_COD";
-
-
-                                        $dataSet = mysqli_query($conecta, $cSql);
-
-                                        while($oDados = mysqli_fetch_assoc($dataSet)){
-                                            echo "
-
-                                            <tr>
-                                            <td name = 'conta".$oDados['CNT_COD']."'>".$oDados['CNT_COD']."</td>
-                                            <td name = 'conta".$oDados['CNT_COD']."'>".$oDados['CNT_NOME']."</td>
-                                            <td name = 'conta".$oDados['CNT_COD']."'>".$oDados['CNT_BANCO']."</td>
-                                            <td name = 'conta".$oDados['CNT_COD']."'>".$oDados['EMP_NOME_EMPRESA']."</td>
-                                            <td name = 'conta".$oDados['CNT_COD']."'>"."R$".number_format($oDados['CNT_SALDOINICIAL'],2,",",".")."</td>
-                                            <td name = 'conta".$oDados['CNT_COD']."'>".$oDados['CNT_STATUS']."</td>
-
-                                            <td><button class = 'btn' id = '".$oDados['CNT_COD']."' onclick = 'selecionaConta(this.id)' >Alterar</button></td>
-                                            </tr>
-                                            ";
-
-                    // for(var i = 0; i<document.getElementById('".$oDados['CNT_COD']."').length;i++){alert(document.getElementById('".$oDados['CNT_COD']."')[i].innerTEXT);}
-
-                                        }
-
-                                        mysqli_free_result($dataSet);
-                                        mysqli_close($conecta);  
-
-
-                                        ?>
 
 
 
@@ -644,60 +525,7 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
 
                                 <tbody>
 
-                                    <?php
-
-                                    require 'src/conecta.php';
-
-
-                                    // $cSql = "SELECT DISTINCT USR_COD,COD_EMPR,EMP_NOME_EMPRESA, USR_NOME, USR_LOGIN, USR_PERMISSAO, USR_EMAIL, USR_SENHA, IF(USR_STATUS = 1,REPLACE( USR_STATUS,1,'Ativo'),REPLACE( USR_STATUS,0,'Inativo')) as USR_STATUS, 
-                                    // IF(USR_PERMISSAO = 0, REPLACE(0, USR_PERMISSAO, 'Usuário'), REPLACE(USR_PERMISSAO, 1, 'Administrador')) as USR_PERMISSAO FROM USR_EMPR INNER JOIN USUARIO ON 
-                                    // USUARIO.USR_COD = USR_EMPR.COD_USR join EMPRESA on COD_EMPR = EMP_COD WHERE COD_EMPR IN (SELECT COD_EMPR FROM USR_EMPR WHERE COD_USR =$cod) AND USR_COD != $cod order by EMP_NOME_EMPRESA";
-
-                                    $cSql = "SELECT  USR_COD, USR_NOME, USR_LOGIN, USR_PERMISSAO, ifnull(USR_EMAIL, '') as USR_EMAIL, USR_SENHA, IF(USR_STATUS = 1,REPLACE( USR_STATUS,1,'Ativo'),REPLACE( USR_STATUS,0,'Inativo')) as USR_STATUS, 
-                                    IF(USR_PERMISSAO = 0, REPLACE(0, USR_PERMISSAO, 'Usuário'), REPLACE(USR_PERMISSAO, 1, 'Administrador')) as USR_PERMISSAO FROM USUARIO WHERE USR_COD
-                                    IN (SELECT COD_USR FROM USR_EMPR WHERE COD_EMPR IN (SELECT COD_EMPR FROM USR_EMPR WHERE COD_USR = $cod)) AND USR_COD != $cod order by USR_NOME";
-
-                                    $dataSet = mysqli_query($conecta, $cSql);
-
-                                    while($oDados = mysqli_fetch_assoc($dataSet)){
-                                        echo "
-
-                                        <tr>
-                                        <td hidden name = 'usr_admin".$oDados['USR_COD']."'>".$oDados['USR_COD']."</td>
-                                        <td name = 'usr_admin".$oDados['USR_COD']."'>".$oDados['USR_NOME']."</td>
-                                        <td name = 'usr_admin".$oDados['USR_COD']."'>".$oDados['USR_LOGIN']."</td>
-                                        <td name = 'usr_admin".$oDados['USR_COD']."'>".$oDados['USR_PERMISSAO']."</td>
-                                        <td name = 'usr_admin".$oDados['USR_COD']."'>".$oDados['USR_STATUS']."</td>
-                                        <td hidden name = 'usr_admin".$oDados['USR_COD']."'>".$oDados['USR_EMAIL']."</td>
-                                        <td hidden name = 'usr_admin".$oDados['USR_COD']."'>".$oDados['USR_SENHA']."</td>
-
-
-
-
-                                        ";
-
-
-                                        if($oDados['USR_PERMISSAO'] != "Administrador"){
-                                            echo "<td><button class = 'btn' id = 'usr_admin".$oDados['USR_COD']."' onclick = 'selecionaUsuario(this.id)'>Alterar</button></td>
-                                            </tr>
-                                            ";
-                                        }
-                                        else{
-                                            echo "<td><button class = 'btn' id = 'usr_admin".$oDados['USR_COD']."' disabled>Alterar</button></td>
-                                            </tr>
-                                            ";
-                                        }
-
-
-                                    }
-
-                                    mysqli_free_result($dataSet);
-                                    mysqli_close($conecta);  
-
-
-
-                                    ?>
-
+                                   
                                 </tbody>
                             </table>
                         </div>
@@ -785,12 +613,6 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
 
 
 
-        <?php
-
-    }
-    ?>
-
-
 
 </div>
 
@@ -857,14 +679,14 @@ if($oDados = mysqli_fetch_assoc($dataSet)){
 }
 
 
-    var options = {
-        onKeyPress: function(cpf, ev, el, op) {
-            var masks = ['000.000.000-000', '00.000.000/0000-00'],
-            mask = (cpf.length > 14) ? masks[1] : masks[0];
-            el.mask(mask, op);
-        }
+var options = {
+    onKeyPress: function(cpf, ev, el, op) {
+        var masks = ['000.000.000-000', '00.000.000/0000-00'],
+        mask = (cpf.length > 14) ? masks[1] : masks[0];
+        el.mask(mask, op);
     }
+}
 
-    $JQ('#txtCnpj').mask('000.000.000-000', options);
+$JQ('#txtCnpj').mask('000.000.000-000', options);
 
 </script>

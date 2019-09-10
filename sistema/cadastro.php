@@ -42,7 +42,7 @@ include_once('superior.php');
 								<div class="col-md-6">
 									<div class="form-group">
 										<label><span id = "cmpObrgt">* </span>Nome</label>
-										<input type="text" class="form-control border-input" name="" id="" placeholder="Nome">
+										<input type="text" class="form-control border-input" name="CliNome" id="CliNome" placeholder="Nome">
 									</div>
 								</div>
 								<div class="col-md-3">
@@ -56,148 +56,197 @@ include_once('superior.php');
 										<label for=""><span id = "cmpObrgt">* </span>Assessor</label>
 										<select value="" class="form-control border-input" name="CliAssessor" id="CliAssessor">
 											<option value="">Selecione...</option>
-											<!-- <option value="PF">Pessoa Física</option>
-												<option value="PJ">Pessoa Jurídica</option> -->
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Telefone</label>
-											<input type="text" class="form-control border-input" name="CliTel" id="CliTel" placeholder="(11) 0000-0000">
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Telefone Celular</label>
-											<input type="text" class="form-control border-input" name="CliCel" id="CliCel" placeholder="(11) 90000-0000" >
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label><span id = "cmpObrgt">* </span>Beneficio</label>
-											<input type="text" class="form-control border-input" name="CliBN" id="CliBN" placeholder="000.000.000-0" >
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Especie</label>
-											<input type="text" class="form-control border-input" name="CliEspecie" id="CliEspecie" placeholder="41" >
-										</div>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label><span id = "cmpObrgt">* </span>Nome Mãe</label>
-											<input type="text" class="form-control border-input" name="CliNameMae" id="CliNameMae" placeholder="Nome da Mãe">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label><span id = "cmpObrgt">* </span>Nome Pai</label>
-											<input type="text" class="form-control border-input" name="" id="" placeholder="">
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-2">
-										<div class="form-group">
-											<label><span id = "cmpObrgt">* </span>CEP</label>
-											<input type="text" class="form-control border-input" name="CLICEP" id="CLICEP" placeholder="">
-										</div>
-									</div>
-									<div class="col-md-7">
-										<div class="form-group">
-											<label><span id = "cmpObrgt">* </span>Logradouro</label>
-											<input type="text" class="form-control border-input" name="" id="" placeholder="">
-										</div>
-									</div>
-									<div class="col-md-3">
-										<div class="form-group">
-											<label><span id = "cmpObrgt">* </span>Numero</label>
-											<input type="text" class="form-control border-input" name="" id="" placeholder="">
-										</div>
-									</div>
-								</div>
-								<!-- <div class="col-md-3">
-									<div class="form-group">
-										<label for=""><span id = "cmpObrgt">* </span>Empresa / Perfil</label>
-										<select value="" class="form-control border-input" id="" name="" >
 										</select>
 									</div>
-								</div> -->
-
-								<!-- <div class="col-md-2">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
 									<div class="form-group">
-										<label for=""><span id = "cmpObrgt">* </span>Status</label>
-										<select value="" class="form-control border-input" name="" id="">
-											<option value="">Selecione...</option>
-											<option value="1">Ativo</option>
-											<option value="0">Inativo</option>
-										</select>
-									</div>
-								</div> -->
-								<div class="row">
-									<div class="col-md-3">
-										<div class="form-group">
-											<label for=""><span id = "cmpObrgt">* </span>Tipo da Conta</label>
-											<select value="" class="form-control border-input" name="cadCliFornTipoConta" id="cadCliFornTipoConta" onchange="trocaTipoConta(this.value)">
-												<option value="Selecione">Selecione...</option>
-												<option value="OP">OP</option>
-												<option value="CC">Corrente</option>
-												<option value="CP">Poupança</option>
-												<!-- <option value="CS">Salário</option> -->
-											</select>
-										</div>
-									</div>
-
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Banco</label>
-											<input type="text" class="form-control border-input" placeholder="Itaú" name="cadCliFornBanco" id="cadCliFornBanco" disabled>
-										</div>
-									</div>
-
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Agência</label>
-											<input type="text" class="form-control border-input" placeholder="5607" name="cadCliFornAg" id="cadCliFornAg" disabled>
-										</div>
-									</div>
-
-									<div class="col-md-3">
-										<div class="form-group">
-											<label>Conta</label>
-											<input type="text" class="form-control border-input" placeholder="00657-3" name="cadCliFornConta" id="cadCliFornConta" disabled>
-										</div>
+										<label>Telefone</label>
+										<input type="text" class="form-control border-input" name="CliTel" id="CliTel" placeholder="(11) 0000-0000">
 									</div>
 								</div>
-							</form>
-
-
-							<div class="text-center">
-								<input type="button" class="btn btn-info btn-fill btn-wd" name="CadCli" id="CadCli" value="Cadastrar">
-
-								<button  class="btn btn-info btn-fill btn-wd danger" value="2"  name="buttonCancelarCliForn" id="buttonCancelarCliForn">Cancelar</button>
-
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Telefone Celular</label>
+										<input type="text" class="form-control border-input" name="CliCel" id="CliCel" placeholder="(11) 90000-0000" >
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label><span id = "cmpObrgt">* </span>Beneficio</label>
+										<input type="text" class="form-control border-input" name="CliBN" id="CliBN" placeholder="000.000.000-0" >
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Especie</label>
+										<input type="text" class="form-control border-input" name="CliEspecie" id="CliEspecie" placeholder="41" >
+									</div>
+								</div>
 							</div>
 
 							<div class="row">
-
-								<div class="col-md-12">
+								<div class="col-md-6">
 									<div class="form-group">
-										<output type="text" class="text-center" name="retornoFormCliForn" id="retornoFormCliForn"></output>
+										<label><span id = "cmpObrgt">* </span>Nome Mãe</label>
+										<input type="text" class="form-control border-input" name="CliNomeMae" id="CliNomeMae" placeholder="Nome da Mãe">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label><span id = "cmpObrgt">* </span>Nome Pai</label>
+										<input type="text" class="form-control border-input" name="CliNomePai" id="" placeholder="Nome do Pai">
 									</div>
 								</div>
 							</div>
-						</div> <!--CONTENT CADASTRO -->
+							<div class="row">
+								<div class="col-md-2">
+									<div class="form-group">
+										<label><span id = "cmpObrgt">* </span>CEP</label>
+										<input type="text" class="form-control border-input" name="CLICEP" id="CLICEP" placeholder="00000-000">
+									</div>
+								</div>
+								<div class="col-md-7">
+									<div class="form-group">
+										<label><span id = "cmpObrgt">* </span>Logradouro</label>
+										<input type="text" class="form-control border-input" name="CliLogradouro" id="CliLogradouro" placeholder="Rua Antonio Nunes">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label><span id = "cmpObrgt">* </span>Numero</label>
+										<input type="text" class="form-control border-input" name="CliNumeroEnd" id="CliNumeroEnd" placeholder="1234">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Bairro</label>
+										<input type="text" class="form-control border-input" name="CliBairroEnd" id="CliBairroEnd" placeholder="Bairro">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<label>Complemento</label>
+										<input type="text" class="form-control border-input" name="CliComplementoEnd" id="" placeholder="CliComplementoEnd">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Cidade</label>
+										<select value="" class="form-control border-input" name="CliCidade" id="CliCidade">
+											<option value="">Selecione...</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<label>UF</label>
+										<select value="" class="form-control border-input" name="CliUF" id="CliUF">
+											<option value="">Selecione...</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for=""><span id = "cmpObrgt">* </span>Tipo da Conta</label>
+										<select value="" class="form-control border-input" name="CliTipoConta" id="CliTipoConta">
+											<option value="Selecione">Selecione...</option>
+											<option value="OP">OP</option>
+											<option value="CC">Corrente</option>
+											<option value="CP">Poupança</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Banco</label>
+										<input type="text" class="form-control border-input" placeholder="Itaú" name="CliBancoConta" id="CliBancoConta" >
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Agência</label>
+										<input type="text" class="form-control border-input" placeholder="5607" name="CliAgenciaConta" id="CliAgenciaConta" >
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Conta</label>
+										<input type="text" class="form-control border-input" placeholder="00657-3" name="CliConta" id="CliConta" >
+									</div>
+								</div>
+							</div>
+							<div class="row">
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Valor</label>
+										<input type="text" class="form-control border-input" placeholder="R$ 1.234,56" name="CliValorNegociacao" id="CliValorNegociacao" >
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="">Operação</label>
+										<select value="" class="form-control border-input" name="CliTipoOperacao" id="CliTipoOperacao">
+											<option value="Selecione">Selecione...</option>
+											<option value="CC">Cartão Comum</option>
+											<option value="CS">Cartão com Saque</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="">Banco</label>
+										<select value="" class="form-control border-input" name="CliBancoNegociacao" id="CliBancoNegociacao">
+											<option value="Selecione">Selecione...</option>
+											<option value="bmg">BMG</option>
+											<option value="bgn">CETELEM</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="">Promotora</label>
+										<select value="" class="form-control border-input" name="CliPromotoraNegociacao" id="CliPromotoraNegociacao">
+											<option value="Selecione">Selecione...</option>
+											<option value="spi">SPI</option>
+											<option value="cf">CF</option>
+											<option value="gft">GFT</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</form>
+
+						<div class="row">
+							<div class="text-center">
+								<button  class="btn btn-info btn-fill btn-wd" name="BtnCadastraCli" id="BtnCadastraCli">Cadastrar</button>
+
+								<button  class="btn btn-info btn-fill btn-wd danger" name="BtnCancelaCli" id="BtnCancelaCli">Cancelar</button>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="col-md-12">
+								<div class="form-group">
+									<output type="text" class="text-center" name="CliRetornoInformacao" id="CliRetornoInformacao"></output>
+								</div>
+							</div>
+						</div>
+					</div> <!--CONTENT CADASTRO -->
 
 
-						<!-- <div class="content"> CONTENT TABELA  -->
+					<!-- <div class="content"> CONTENT TABELA  -->
 
 						<!-- <div class="col-md-6 col-md-offset-3 text-center" style="margin-bottom: 15px;">
 							<div class="form-group">

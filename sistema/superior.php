@@ -84,22 +84,18 @@ $url = basename($_SERVER['PHP_SELF']);
                 <p>Dashboard</p>
             </a>
         </li>
-
-       <!--  <li <?php if($url == 'lancamentos.php'){ echo "class = 'active'" ;}?>>
-            <a href="lancamentos.php">
-                <i class="ti-server"></i>
-                <p>Lançamentos</p>
-            </a>
-        </li> -->
-
-
         <li <?php if($url == 'cadastro.php'){ echo "class = 'active'" ;}?>>
             <a href="cadastro.php">
                 <i class="ti-view-list-alt"></i>
                 <p>Cadastro</p>
             </a>
         </li>
-
+        <li <?php if($url == 'consulta.php'){ echo "class = 'active'" ;}?>>
+            <a href="consulta.php">
+                <i class="ti-server"></i>
+                <p>Consulta</p>
+            </a>
+        </li>
         <li <?php if($url == 'relatorio.php'){ echo "class = 'active'" ;}?>>
             <a href="relatorio.php">
                 <i class="ti-bar-chart"></i>
@@ -107,12 +103,12 @@ $url = basename($_SERVER['PHP_SELF']);
             </a>
         </li>
 
-        <li <?php if($url == 'usuario.php'){ echo "class = 'active'" ;}?>>
+        <!-- <li <?php if($url == 'usuario.php'){ echo "class = 'active'" ;}?>>
             <a href="usuario.php">
                 <i class="ti-user"></i>
                 <p>Usuário / Conta</p>
             </a>
-        </li>
+        </li> -->
     </ul>
     
 </div>
@@ -203,7 +199,7 @@ $url = basename($_SERVER['PHP_SELF']);
                 </a>
             </li> -->
 
-          
+
             <li>
                 <a href="usuario.php">
                     <i class="fa ti-user"></i>
