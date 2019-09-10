@@ -1,9 +1,7 @@
 <?php 
-// session_start();
-include_once('superior.php');
-// require 'src/conecta.php';
 
-// $cod =  $_SESSION['user']['id'];
+include_once('superior.php');
+
 ?>
 
 
@@ -134,14 +132,6 @@ include_once('superior.php');
 										<input type="text" class="form-control border-input" name="CliComplementoEnd" id="" placeholder="CliComplementoEnd">
 									</div>
 								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label>Cidade</label>
-										<select value="" class="form-control border-input" name="CliCidade" id="CliCidade">
-											<option value="">Selecione...</option>
-										</select>
-									</div>
-								</div>
 								<div class="col-md-2">
 									<div class="form-group">
 										<label>UF</label>
@@ -150,6 +140,15 @@ include_once('superior.php');
 										</select>
 									</div>
 								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Cidade</label>
+										<select value="" class="form-control border-input" name="CliCidade" id="CliCidade" disabled>
+											<option value="">Selecione...</option>
+										</select>
+									</div>
+								</div>
+								
 							</div>
 							<div class="row">
 								<div class="col-md-3">
@@ -187,13 +186,13 @@ include_once('superior.php');
 							</div>
 							<div class="row">
 
-								<div class="col-md-3">
+								<div class="col-md-2">
 									<div class="form-group">
 										<label>Valor</label>
 										<input type="text" class="form-control border-input" placeholder="R$ 1.234,56" name="CliValorNegociacao" id="CliValorNegociacao" >
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-2">
 									<div class="form-group">
 										<label for="">Operação</label>
 										<select value="" class="form-control border-input" name="CliTipoOperacao" id="CliTipoOperacao">
@@ -203,7 +202,7 @@ include_once('superior.php');
 										</select>
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-2">
 									<div class="form-group">
 										<label for="">Banco</label>
 										<select value="" class="form-control border-input" name="CliBancoNegociacao" id="CliBancoNegociacao">
@@ -213,7 +212,7 @@ include_once('superior.php');
 										</select>
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-2">
 									<div class="form-group">
 										<label for="">Promotora</label>
 										<select value="" class="form-control border-input" name="CliPromotoraNegociacao" id="CliPromotoraNegociacao">
@@ -221,6 +220,14 @@ include_once('superior.php');
 											<option value="spi">SPI</option>
 											<option value="cf">CF</option>
 											<option value="gft">GFT</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="">Esteira</label>
+										<select value="" class="form-control border-input" name="CliPromotoraNegociacao" id="CliPromotoraNegociacao">
+											<option value="Selecione">Selecione...</option>
 										</select>
 									</div>
 								</div>
