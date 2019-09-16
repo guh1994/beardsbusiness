@@ -19,20 +19,20 @@ class Cliente implements \JsonSerializable
     public function getIdCliente(){
         return $this->idCliente;
     }
-    public function setIdCliente(){
+    public function setIdCliente($idCliente){
         $this->idCliente = $idCliente;
     }
     public function getNomeCliente(){
         return $this->nome;
     }
-    public function setNomeCliente(){
+    public function setNomeCliente($nome){
         $this->nome = $nome;
     }
     public function getcpfCliente()
     {
         return $this->cpf;
     }
-    public function setcpfCliente()
+    public function setcpfCliente($cpf)
     {
         $this->cpf = $cpf;
     }
@@ -40,7 +40,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->telfixo;
     }
-    public function setTelfixoCliente()
+    public function setTelfixoCliente($telfixo)
     {
         $this->telfixo = $telfixo;
     }
@@ -48,7 +48,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->telcel;
     }
-    public function setTelcelCliente()
+    public function setTelcelCliente($telcel)
     {
         $this->telcel = $telcel;
     }
@@ -56,7 +56,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->beneficio;
     }
-    public function setBeneficioCliente()
+    public function setBeneficioCliente($beneficio)
     {
         $this->beneficio = $beneficio;
     }
@@ -64,7 +64,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->especieBeneficio;
     }
-    public function setEspecieBeneficioCliente()
+    public function setEspecieBeneficioCliente($especieBeneficio)
     {
         $this->especieBeneficio = $especieBeneficio;
     }
@@ -72,7 +72,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->nomeMae;
     }
-    public function setNomeMaeCliente()
+    public function setNomeMaeCliente($nomeMae)
     {
         $this->nomeMae = $nomeMae;
     }
@@ -80,7 +80,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->nomePai;
     }
-    public function setNomePaiCliente()
+    public function setNomePaiCliente($nomePai)
     {
         $this->nomePai = $nomePai;
     }
@@ -88,7 +88,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->logradouro;
     }
-    public function setLogradouroCliente()
+    public function setLogradouroCliente($logradouro)
     {
         $this->logradouro = $logradouro;
     }
@@ -96,7 +96,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->CEP;
     }
-    public function setCEPCliente()
+    public function setCEPCliente($CEP)
     {
         $this->CEP = $CEP;
     }
@@ -104,7 +104,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->bairro;
     }
-    public function setBairroCliente()
+    public function setBairroCliente($bairro)
     {
         $this->bairro = $bairro;
     }
@@ -112,7 +112,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->complemento;
     }
-    public function setComplementoCliente()
+    public function setComplementoCliente($complemento)
     {
         $this->complemento = $complemento;
     }
@@ -120,7 +120,7 @@ class Cliente implements \JsonSerializable
     {
         return $this->numEnd;
     }
-    public function setNumEndCliente()
+    public function setNumEndCliente($numEnd)
     {
         $this->numEnd = $numEnd;
     }

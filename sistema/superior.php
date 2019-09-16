@@ -54,6 +54,8 @@ $url = basename($_SERVER['PHP_SELF']);
     <link href="assets/css/themify-icons.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+   
+
 
 
 </head>
@@ -70,7 +72,7 @@ $url = basename($_SERVER['PHP_SELF']);
 		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
 	-->
 
- <div class="sidebar-wrapper">
+   <div class="sidebar-wrapper">
     <div class="logo">
         <a href="#" class="simple-text" >
             Beards Business
@@ -130,9 +132,9 @@ $url = basename($_SERVER['PHP_SELF']);
             <a class="navbar-brand" href="#">
                 <?php
                 if($url == 'dashboard.php'){
-                   echo "DashBoard" ;
-               }
-               else if($url == 'usuario.php'){
+                 echo "DashBoard" ;
+             }
+             else if($url == 'usuario.php'){
 
                 echo "Usuário / Conta";
             }
@@ -164,7 +166,7 @@ $url = basename($_SERVER['PHP_SELF']);
 
 
 
-     <ul class="nav navbar-nav navbar-right">
+       <ul class="nav navbar-nav navbar-right">
 
 
 
@@ -181,7 +183,7 @@ $url = basename($_SERVER['PHP_SELF']);
     </li>
     <li class="dropdown">
 
-     <li>
+       <li>
 
         <a href="src/deslogar.php">
             <i class="ti-shift-right-alt"></i> Logout
