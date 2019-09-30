@@ -11,7 +11,7 @@ include_once('superior.php');
 
 
 		<ul class="nav nav-pills NavegadorSuperior">
-			<li class="active" id = "lancamento" onclick="fnMenuFinancas(this)">
+			<li class="active" id = "lancamento" >
 				<a href="#"><span class="ti-server"></span> Cliente</a>
 			</li>
 			<!-- 
