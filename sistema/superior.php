@@ -185,7 +185,7 @@ $url = basename($_SERVER['PHP_SELF']);
 
        <li>
 
-        <a href="src/deslogar.php">
+        <a href="control/logout.php">
             <i class="ti-shift-right-alt"></i> Logout
         </a>
     </li> 

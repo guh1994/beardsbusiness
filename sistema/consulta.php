@@ -50,14 +50,12 @@ include_once('superior.php');
 						<thead>
 							<tr>
 								<th hidden>Código</th>
-								<th>Empresa</th>
 								<th>Assessor</th>
 								<th>Tipo Operação</th>
-								<th>Valor</th>
 								<th>Data Venda</th>
-								<th>Status</th>
 								<th>Atualizado Por</th>
 								<th>Data e Hora da atualização</th>
+								<th>Esteira</th>
 								<th>Editar</th>
 
 							</tr>
@@ -67,10 +65,13 @@ include_once('superior.php');
 								<td></td>
 								<td></td>
 								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Exibir mensagem</button></td>
+								<td>
+									<select class="form-control border-input">
+										<option>Selecione a esteira</option>
+										<option>Aguardando Averbação</option>
+									</select>
+								</td>
+								<td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Editar</button></td>
 							</tr>
 
 						</thead>

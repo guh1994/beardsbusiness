@@ -11,7 +11,7 @@ include_once('superior.php');
 
 
 		<ul class="nav nav-pills NavegadorSuperior">
-			<li class="active" id = "lancamento" >
+			<li class="active" id = "lancamento">
 				<a href="#"><span class="ti-server"></span> Cliente</a>
 			</li>
 			<!-- 
@@ -61,31 +61,37 @@ include_once('superior.php');
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
-									<label>Telefone</label>
-									<input type="text" class="form-control border-input" name="CliTel" id="CliTel" placeholder="(11) 0000-0000">
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>Telefone Celular</label>
-									<input type="text" class="form-control border-input" name="CliCel" id="CliCel" placeholder="(11) 90000-0000" >
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="form-group">
 									<label><span id = "cmpObrgt">* </span>Beneficio</label>
 									<input type="text" class="form-control border-input" name="CliBN" id="CliBN" placeholder="000.000.000-0" >
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-2">
 								<div class="form-group">
 									<label>Especie</label>
 									<input type="text" class="form-control border-input" name="CliEspecie" id="CliEspecie" placeholder="41" >
 								</div>
 							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>UF</label>
+									<select value="" class="form-control border-input" name="CliUF" id="CliUF">
+										<option value="">Selecione...</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div class="form-group">
+									<label>Cidade</label>
+									<select value="" class="form-control border-input" name="CliCidade" id="CliCidade" disabled>
+										<option value="">Selecione...</option>
+									</select>
+								</div>
+							</div>
+
 						</div>
 
-						<div class="row">
+						
+						<!-- </div><div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<label><span id = "cmpObrgt">* </span>Nome Mãe</label>
@@ -97,10 +103,8 @@ include_once('superior.php');
 									<label><span id = "cmpObrgt">* </span>Nome Pai</label>
 									<input type="text" class="form-control border-input" name="CliNomePai" id="" placeholder="Nome do Pai">
 								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-2">
+							</div> -->
+							<!-- <div class="col-md-2">
 								<div class="form-group">
 									<label><span id = "cmpObrgt">* </span>CEP</label>
 									<input type="text" class="form-control border-input" name="CLICEP" id="CLICEP" placeholder="00000-000">
@@ -131,68 +135,50 @@ include_once('superior.php');
 									<label>Complemento</label>
 									<input type="text" class="form-control border-input" name="CliComplementoEnd" id="" placeholder="CliComplementoEnd">
 								</div>
-							</div>
-							<div class="col-md-2">
-								<div class="form-group">
-									<label>UF</label>
-									<select value="" class="form-control border-input" name="CliUF" id="CliUF">
-										<option value="">Selecione...</option>
-									</select>
+							</div> -->
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for=""><span id = "cmpObrgt">* </span>Tipo da Conta</label>
+										<select value="" class="form-control border-input" name="CliTipoConta" id="CliTipoConta">
+											<option value="Selecione">Selecione...</option>
+											<option value="OP">OP</option>
+											<option value="CC">Corrente</option>
+											<option value="CP">Poupança</option>
+										</select>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<label>Cidade</label>
-									<select value="" class="form-control border-input" name="CliCidade" id="CliCidade" disabled>
-										<option value="">Selecione...</option>
-									</select>
-								</div>
-							</div>
-							
-						</div>
-						<div class="row">
-							<div class="col-md-3">
-								<div class="form-group">
-									<label for=""><span id = "cmpObrgt">* </span>Tipo da Conta</label>
-									<select value="" class="form-control border-input" name="CliTipoConta" id="CliTipoConta">
-										<option value="Selecione">Selecione...</option>
-										<option value="OP">OP</option>
-										<option value="CC">Corrente</option>
-										<option value="CP">Poupança</option>
-									</select>
-								</div>
-							</div>
 
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>Banco</label>
-									<input type="text" class="form-control border-input" placeholder="Itaú" name="CliBancoConta" id="CliBancoConta" >
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Banco</label>
+										<input type="text" class="form-control border-input" placeholder="Itaú" name="CliBancoConta" id="CliBancoConta" >
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Agência</label>
+										<input type="text" class="form-control border-input" placeholder="5607" name="CliAgenciaConta" id="CliAgenciaConta" >
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Conta</label>
+										<input type="text" class="form-control border-input" placeholder="00657-3" name="CliConta" id="CliConta" >
+									</div>
 								</div>
 							</div>
+							<div class="row">
 
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>Agência</label>
-									<input type="text" class="form-control border-input" placeholder="5607" name="CliAgenciaConta" id="CliAgenciaConta" >
-								</div>
-							</div>
-
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>Conta</label>
-									<input type="text" class="form-control border-input" placeholder="00657-3" name="CliConta" id="CliConta" >
-								</div>
-							</div>
-						</div>
-						<div class="row">
-
-							<div class="col-md-2">
+							<!-- <div class="col-md-2">
 								<div class="form-group">
 									<label>Valor</label>
 									<input type="text" class="form-control border-input" placeholder="R$ 1.234,56" name="CliValorNegociacao" id="CliValorNegociacao" >
 								</div>
-							</div>
-							<div class="col-md-2">
+							</div> -->
+							<div class="col-md-4">
 								<div class="form-group">
 									<label for="">Operação</label>
 									<select value="" class="form-control border-input" name="CliTipoOperacao" id="CliTipoOperacao">
@@ -202,7 +188,7 @@ include_once('superior.php');
 									</select>
 								</div>
 							</div>
-							<div class="col-md-2">
+							<div class="col-md-4">
 								<div class="form-group">
 									<label for="">Banco</label>
 									<select value="" class="form-control border-input" name="CliBancoNegociacao" id="CliBancoNegociacao">
@@ -212,7 +198,7 @@ include_once('superior.php');
 									</select>
 								</div>
 							</div>
-							<div class="col-md-2">
+							<div class="col-md-4">
 								<div class="form-group">
 									<label for="">Promotora</label>
 									<select value="" class="form-control border-input" name="CliPromotoraNegociacao" id="CliPromotoraNegociacao">
@@ -223,14 +209,14 @@ include_once('superior.php');
 									</select>
 								</div>
 							</div>
-							<div class="col-md-4">
+							<!-- <div class="col-md-4">
 								<div class="form-group">
 									<label for="">Esteira</label>
 									<select value="" class="form-control border-input" name="CliPromotoraNegociacao" id="CliPromotoraNegociacao">
 										<option value="Selecione">Selecione...</option>
 									</select>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</form>
 
