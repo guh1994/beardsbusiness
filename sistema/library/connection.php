@@ -64,6 +64,9 @@ class Database{
         return true;
         
     }
+    public function getResultados():array{
+        return $this->resultado->fetchAll();
+    }
 }
 
 ?>

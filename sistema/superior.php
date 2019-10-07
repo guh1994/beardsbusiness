@@ -1,14 +1,11 @@
 <?php 
 
-// if( !isset($_SESSION['user']) )
-// {
+session_start();
 
-//     echo "<script>window.location = 'index.htm';</script>";
-
-//     exit;
-// }
-
-
+if(!isset($_SESSION['user'])){
+    header("Location: ./index.htm");
+    die();
+}
 $url = basename($_SERVER['PHP_SELF']);
 
 ?>

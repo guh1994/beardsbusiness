@@ -50,7 +50,7 @@
 </head>
 <!-- Enter -->
 
-<body onkeyup="if(event.keyCode==13) selectLogin(document.all.usuario.value, document.all.senha.value)">
+<body >
 
     <div class="content">
         <div class="container-fluid">
@@ -82,7 +82,7 @@
 
                         <div class="content">
 
-                            <form>
+                            <form id="formLogin">
                                 <div class="row">
 
                                     <div class="col-md-12">
@@ -96,7 +96,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Login</label>
-                                            <input type="email" class="form-control border-input" name='usuario' id="usuario" placeholder="Usuário" >
+                                            <input type="text" class="form-control border-input" name='usuario' id="usuario" placeholder="Usuário" >
                                         </div>
                                     </div>
 
@@ -125,7 +125,7 @@
                             </script>
 
                             <!--button class="btn btn-info btn-fill botao" onclick="selectLogin(document.all.usuario.value, document.all.senha.value)">Entrar</button-->
-                            <button class="btn btn-info btn-fill botao">Entrar</button>
+                            <input type="button" class="btn btn-info btn-fill botao" id="logarUser" name="logarUser" value="Entrar">
                             <div id="message"></div>
 
 
@@ -290,16 +290,13 @@
 
 
 </body>
-<script src="js/ajaxLogin.js"></script>
-<script src="js/interatividades.js"></script>
 <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
-<script src="js/jquery.mask.js"></script>
+<!-- <script src="js/jquery.mask.js"></script> -->
 
-<script src="js/CrudAjaxInsereLogin.js"></script>
+<script src="js/login.js"></script>
 
 
 <script src="js/jquery.maskMoney.min.js"></script>
-<script src="js/animacaoOlhoSenha.js"></script>
 
 <script>
     $("#saldoContaCadastro").maskMoney({
@@ -313,32 +310,3 @@
 </script>
 
 
-<script>
-    var options = {
-        onKeyPress: function(cpf, ev, el, op) {
-            var masks = ['000.000.000-000', '00.000.000/0000-00'],
-            mask = (cpf.length > 14) ? masks[1] : masks[0];
-            el.mask(mask, op);
-        }
-    }
-
-    $('#cnpjEmpresaCadastro').mask('000.000.000-000', options);
-
-</script>
-
-
-<script>
-    document.getElementById('olhoCadastro').addEventListener('mousedown', function() {
-        document.getElementById('senhaCadastro').type = 'text';
-
-
-
-    });
-
-    document.getElementById('olhoCadastro').addEventListener('mouseup', function() {
-        document.getElementById('senhaCadastro').type = 'password';
-
-
-    });
-
-</script>
